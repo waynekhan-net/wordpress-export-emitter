@@ -2,6 +2,7 @@
 
 
 from datetime import datetime
+from markdownify import markdownify as md
 from utils.text import slugify
 
 import logging
@@ -21,7 +22,10 @@ if __name__ == "__main__":
         if i.tag == "title":
           title = i.text
         elif i.tag == "{http://purl.org/rss/1.0/modules/content/}encoded":
-          content = i.text
+          try:
+            content = md(i.text)
+          except:
+            logging.error(f"Skipped {title}")
         elif i.tag == "{http://wordpress.org/export/1.2/}post_date_gmt":
           ptime = datetime.strptime(i.text, "%Y-%m-%d %H:%M:%S")
           ftime = datetime.strftime(ptime, "%Y-%m-%dT%H:%M:%S+00:00")
@@ -33,8 +37,7 @@ title: {title}
 date: {date}
 ---
 
-{content}
-"""
+{content}"""
 
       print(file_name)
       print(post.format(title=title, date=ftime, content=content))
