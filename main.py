@@ -33,11 +33,16 @@ if __name__ == "__main__":
             slug = datetime.strftime(ptime, "%Y-%m-%d-") + slugify(title)
             file_name = slug + ".md"
             post = """---
-title: {title}
+title: "{title}"
 date: {date}
 ---
 
-{content}"""
+{content}
+"""
 
-            print(file_name)
-            print(post.format(title=title, date=ftime, content=content))
+            with open(f"./tmp/{file_name}", 'w') as file_handle:
+                file_handle.write(
+                    post.format(
+                        title=title,
+                        date=ftime,
+                        content=content))
