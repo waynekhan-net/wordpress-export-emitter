@@ -2,9 +2,21 @@
 <rss version="2.0" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/">
   <channel>
     <item>
-      <title><![CDATA[Foo]]></title>
-      <content:encoded><![CDATA[Bar]]></content:encoded>
+      <title><![CDATA[Spam]]></title>
+      <content:encoded><![CDATA[Spam]]></content:encoded>
       <wp:post_date_gmt>2023-01-18 23:30:00</wp:post_date_gmt>
+    </item>
+
+    <item>
+      <title><![CDATA[Ham]]></title>
+      <content:encoded><![CDATA[Ham]]></content:encoded>
+      <wp:post_date_gmt>2023-01-20 00:00:00</wp:post_date_gmt>
+    </item>
+
+    <item>
+      <title><![CDATA[Eggs]]></title>
+      <content:encoded><![CDATA[Eggs]]></content:encoded>
+      <wp:post_date_gmt>2023-01-20 00:02:00</wp:post_date_gmt>
     </item>
   </channel>
 </rss>
