@@ -9,12 +9,13 @@ pipenv install --python $(which python3)
 # Run it
 pipenv run ./main.py
 
-# Generate Coverage.py XML
+# Get a shell in the virtualenv
 pipenv shell
-coverage xml
 
 # Sonar
-/opt/sonar-scanner/bin/sonar-scanner \
+coverage run ./main.py && \
+  coverage xml && \
+  /opt/sonar-scanner/bin/sonar-scanner \
   -Dsonar.host.url=$SONAR_HOST_URL \
   -Dsonar.login=$SONAR_TOKEN \
   -X \
