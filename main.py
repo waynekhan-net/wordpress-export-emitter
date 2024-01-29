@@ -25,7 +25,7 @@ if __name__ == "__main__":
                     try:
                         content = md(i.text)
                     except BaseException:
-                        logging.error(f"Skipped {title}")
+                        logging.error(f"Skipped {title}")  # pragma: no cover
                 elif i.tag == "{http://wordpress.org/export/1.2/}post_date_gmt":
                     ptime = datetime.strptime(i.text, "%Y-%m-%d %H:%M:%S")
                     ftime = datetime.strftime(ptime, "%Y-%m-%dT%H:%M:%S+00:00")

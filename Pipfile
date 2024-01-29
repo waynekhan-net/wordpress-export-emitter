@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 markdownify = "0.11.6"
+coverage = "*"
 
 [dev-packages]
 
