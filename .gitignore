@@ -1,2 +1,5 @@
-__pycache__
+.scannerwork/
+__pycache__/
+coverage.xml
+scanner.txt
 tmp/*
