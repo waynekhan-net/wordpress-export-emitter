@@ -10,6 +10,8 @@ import xml.etree.ElementTree as ET
 
 
 if __name__ == "__main__":
+    ip = "192.168.12.42"
+
     tree = ET.parse("./example.xml")
     root = tree.getroot()
 
