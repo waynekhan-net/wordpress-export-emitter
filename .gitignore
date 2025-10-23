@@ -1,5 +1,4 @@
-.scannerwork/
-__pycache__/
+.coverage
+.sonar/
 coverage.xml
-scanner.txt
 tmp/*

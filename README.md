@@ -13,11 +13,8 @@ pipenv run ./main.py
 pipenv shell
 
 # Sonar
-coverage run ./main.py && \
-  coverage xml && \
-  /opt/sonar-scanner/bin/sonar-scanner \
-  -Dsonar.host.url=$SONAR_HOST_URL \
-  -Dsonar.login=$SONAR_TOKEN \
-  -X \
-  > scanner.txt
+coverage run ./main.py && coverage xml && \
+  pysonar -Dsonar.host.url=$SONAR_HOST_URL \
+    -Dsonar.token=$SONAR_TOKEN \
+    -Dsonar.python.coverage.reportPaths=coverage.xml
 ```
