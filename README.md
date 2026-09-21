@@ -12,10 +12,7 @@ pipenv run ./main.py
 # Get a shell in the virtualenv
 pipenv shell
 
-# Sonar
-coverage run ./main.py && \
-  coverage xml && \
-  pysonar -Dsonar.host.url=$SONAR_HOST_URL \
-    -Dsonar.token=$SONAR_TOKEN \
-    -Dsonar.python.coverage.reportPaths=coverage.xml
+# Sonar (coverage report; CI uploads it via the SonarQube scan action)
+pipenv run coverage run ./main.py && \
+  pipenv run coverage xml
 ```
