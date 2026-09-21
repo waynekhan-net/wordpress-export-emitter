@@ -6,8 +6,7 @@ name = "pypi"
 [packages]
 coverage = "7.10.7"
 markdownify = "0.11.6"
-pysonar = "1.0.2.1722"
-urllib3 = "2.7.0"
+urllib3 = "2.8.0"
 
 [requires]
-python_version = "3.9"
+python_version = "3.14"
