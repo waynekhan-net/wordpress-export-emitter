@@ -24,7 +24,7 @@ if __name__ == "__main__":
                 elif i.tag == "{http://purl.org/rss/1.0/modules/content/}encoded":
                     try:
                         content = md(i.text)
-                    except BaseException:
+                    except Exception:
                         logging.error(f"Skipped {title}")  # pragma: no cover
                 elif i.tag == "{http://wordpress.org/export/1.2/}post_date_gmt":
                     ptime = datetime.strptime(i.text, "%Y-%m-%d %H:%M:%S")
